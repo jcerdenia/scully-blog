@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'articles', loadChildren: () => import('./articles/articles.module').then(m => m.ArticlesModule) },
   { path: '', pathMatch: 'full', redirectTo: 'articles' },
+  { path: 'posts', loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule) },
   { path: '**', redirectTo: 'articles' }, 
   // ** is wild card, triggered when router cannot match requested URL with a defined route
   // NB all these routes are parsed in order, first match wins
